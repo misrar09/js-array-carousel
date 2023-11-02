@@ -23,12 +23,41 @@ let activeImage = 0;
 
 imgElements[activeImage].classList.add("inAction");
 
+
 const btnUpElement = document.querySelector(".btnUp");
 
 btnUpElement.addEventListener("click", function() {
+    imgElements[activeImage].classList.remove("inAction");
+
     if (activeImage < imgElements.length - 1) {
-        imgElements[activeImage].classList.remove("inAction");
         activeImage++;
-        imgElements[activeImage].classList.add("inAction");
+        
     }
+
+    else{
+        activeImage = 0
+        
+    }
+
+    imgElements[activeImage].classList.add("inAction");
+
+
 });
+
+
+const btnDownElement = document.querySelector(".btnDown");
+
+btnDownElement.addEventListener("click", function() {
+    imgElements[activeImage].classList.remove("inAction");
+
+    if (activeImage > 0) {
+        activeImage--;
+    } else {
+        activeImage = imgElements.length - 1; 
+    }
+
+    imgElements[activeImage].classList.add("inAction");
+});
+
+
+
