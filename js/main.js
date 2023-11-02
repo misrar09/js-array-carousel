@@ -9,4 +9,9 @@ for (let i = 0; i < imageGallery.length; i++) {
     const imgElement = document.createElement("img");
     imgElement.src = imageList;
     contaiiner.appendChild(imgElement)
+
+    if(i == 0) {
+        imgElement.classList.add("InAction")
+    }
+
 }
